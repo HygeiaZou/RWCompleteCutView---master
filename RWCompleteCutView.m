@@ -124,7 +124,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
                      action:@selector(buttonDidClick)
            forControlEvents:UIControlEventTouchUpInside];
     
-    _footerLabel.text = @"zhongyu 中域";
+    _footerLabel.text = @"RyeWhiskey";
     _footerLabel.textColor = [UIColor darkGrayColor];
     _footerLabel.font = [UIFont systemFontOfSize:fontSize - 4];
     
@@ -280,9 +280,13 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
 
 - (void)setDefaultValueWithView
 {
+    RWCardContentView *bottomView = _contentViews[RWContentViewOfBottom];
+    
+    bottomView.alpha = 0.5f;
+    
     RWCardContentView *translucentView = _contentViews[RWContentViewOfTranslucent];
     
-    translucentView.alpha = 0.7;
+    translucentView.alpha = 0.7f;
     
     RWCardContentView *mainView = _contentViews[RWContentViewOfMain];
     
@@ -327,7 +331,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
     }
     else if (_contentDatas.count == 1 && distance.x > 0.0f)
     {
-        CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, -0.6);
+        CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, -0.6f);
         
         panGesture.view.transform = transform;
         
@@ -337,7 +341,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
         
         translucentView.transform = transform;
         
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.2f animations:^{
             
             panGesture.view.transform = transform;
         }];
@@ -370,7 +374,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
     {
         if (_angles < -0.15f)
         {
-            [UIView animateWithDuration:0.1 animations:^{
+            [UIView animateWithDuration:0.1f animations:^{
                 
                 CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, - 1);
                 
@@ -391,7 +395,12 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
         }
         else if (_angles > 0.15f)
         {
-            CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, -0.6);
+            if (_indexPath.row == 0)
+            {
+                return;
+            }
+            
+            CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, -0.6f);
             
             panGesture.view.transform = transform;
             
@@ -401,7 +410,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
             
             translucentView.transform = transform;
             
-            [UIView animateWithDuration:0.2 animations:^{
+            [UIView animateWithDuration:0.2f animations:^{
 
                 panGesture.view.transform = transform;
             }];
@@ -411,7 +420,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
         }
         else
         {
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.3f animations:^{
                 
                 _angles = 0;
                 
@@ -444,7 +453,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
     }
     else
     {
-        bottomView.alpha = 1.0f;
+        bottomView.alpha = 0.5f;
         translucentView.alpha = 0.7f;
     }
 
@@ -457,7 +466,7 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
         cut.contentImage = _contentDatas[i];
     }
     
-    _background.image = [self blurryImage:_contentDatas[0] withBlurLevel:0.999];
+    _background.image = [self blurryImage:_contentDatas[0] withBlurLevel:0.999f];
 }
 
 - (CGFloat)revolveAngleWithDistance:(CGFloat)distance
@@ -658,6 +667,7 @@ static NSString *const cutCell = @"cutCell";
     
     _faceIndexPath = indexPath;
     
+    cell.indexPath = indexPath;
     cell.number = [NSString stringWithFormat:@"%d/%d",(int)indexPath.row+1,
                                                       (int)_viewSource.count];
     cell.contentDatas = _viewSource[indexPath.row];

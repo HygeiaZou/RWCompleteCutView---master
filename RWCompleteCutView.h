@@ -56,6 +56,8 @@ typedef NS_ENUM(NSInteger,RWContentView)
 
 @property (nonatomic,strong)NSString *number;
 
+@property (nonatomic,strong)NSIndexPath *indexPath;
+
 @end
 
 @interface RWCompleteCutView : UICollectionView
