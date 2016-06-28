@@ -322,8 +322,8 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
     CGFloat centerX = panGesture.view.center.x;
     CGFloat centerY = panGesture.view.center.y;
     
-    CGFloat x = panGesture.view.frame.origin.x;
-    CGFloat y = panGesture.view.bounds.size.height + panGesture.view.frame.origin.y;
+    CGFloat x = centerX;
+    CGFloat y = panGesture.view.bounds.size.height * 2;
     
     if (_contentDatas.count == 1 && distance.x < 0.0f)
     {
