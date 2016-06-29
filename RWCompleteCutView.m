@@ -374,24 +374,32 @@ CGAffineTransform  GetCGAffineTransformRotateAroundPoint(CGFloat centerX, CGFloa
     {
         if (_angles < -0.15f)
         {
-            [UIView animateWithDuration:0.1f animations:^{
-                
-                CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, - 1);
-                
+            CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, -0.5);
+            
+            [UIView animateWithDuration:0.2f animations:^{
+               
                 panGesture.view.transform = transform;
-                
-            } completion:^(BOOL finished) {
-                
-                _angles = 0;
-                
-                CGAffineTransform transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, _angles);
-                
-                panGesture.view.transform = transform;
-                translucentView.transform = transform;
             }];
             
             self.userInteractionEnabled = NO;
+            
             [_delegate revolveDidChangeViewWithState:RWChangeViewStateToNextView];
+            
+            transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, 0.005f);
+            
+            panGesture.view.transform = transform;
+            
+            _angles = 0;
+            
+            transform = GetCGAffineTransformRotateAroundPoint(centerX, centerY, x, y, _angles);
+            
+            translucentView.transform = transform;
+            
+            [UIView animateWithDuration:0.1f animations:^{
+
+                panGesture.view.transform = transform;
+                
+            }];
         }
         else if (_angles > 0.15f)
         {
