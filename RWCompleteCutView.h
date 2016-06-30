@@ -58,6 +58,8 @@ typedef NS_ENUM(NSInteger,RWContentView)
 
 @property (nonatomic,strong)NSIndexPath *indexPath;
 
+- (void)didInThisView;
+
 @end
 
 @interface RWCompleteCutView : UICollectionView
