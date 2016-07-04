@@ -35,6 +35,7 @@
 		122F70D71D1A8D0000F6C780 /* beauty6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 122F70D01D1A8D0000F6C780 /* beauty6.jpg */; };
 		122F70D81D1A8D0000F6C780 /* beauty7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 122F70D11D1A8D0000F6C780 /* beauty7.jpg */; };
 		122F70DA1D1AB09100F6C780 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 122F70D91D1AB09100F6C780 /* Accelerate.framework */; };
+		92AF5E601D2AA874001E0479 /* HQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AF5E5F1D2AA874001E0479 /* HQAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		122F70D01D1A8D0000F6C780 /* beauty6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty6.jpg; sourceTree = "<group>"; };
 		122F70D11D1A8D0000F6C780 /* beauty7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beauty7.jpg; sourceTree = "<group>"; };
 		122F70D91D1AB09100F6C780 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		92AF5E5E1D2AA874001E0479 /* HQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQAdd.h; sourceTree = "<group>"; };
+		92AF5E5F1D2AA874001E0479 /* HQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQAdd.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 		122F70621D1A821900F6C780 = {
 			isa = PBXGroup;
 			children = (
+				92AF5E5E1D2AA874001E0479 /* HQAdd.h */,
+				92AF5E5F1D2AA874001E0479 /* HQAdd.m */,
 				122F70D91D1AB09100F6C780 /* Accelerate.framework */,
 				122F70CA1D1A8D0000F6C780 /* images */,
 				122F70A41D1A825B00F6C780 /* Masonry */,
@@ -396,6 +401,7 @@
 				122F70C61D1A825B00F6C780 /* NSArray+MASAdditions.m in Sources */,
 				122F70C51D1A825B00F6C780 /* MASViewConstraint.m in Sources */,
 				122F70C41D1A825B00F6C780 /* MASViewAttribute.m in Sources */,
+				92AF5E601D2AA874001E0479 /* HQAdd.m in Sources */,
 				122F70C81D1A825B00F6C780 /* View+MASAdditions.m in Sources */,
 				122F70701D1A821900F6C780 /* main.m in Sources */,
 				122F70A31D1A823400F6C780 /* RWCompleteCutView.m in Sources */,
@@ -544,6 +550,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AsCut/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RyeWhiskey.AsCut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -555,6 +562,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AsCut/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RyeWhiskey.AsCut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -626,6 +634,7 @@
 				122F709A1D1A821900F6C780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		122F709B1D1A821900F6C780 /* Build configuration list for PBXNativeTarget "AsCutTests" */ = {
 			isa = XCConfigurationList;
@@ -634,6 +643,7 @@
 				122F709D1D1A821900F6C780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		122F709E1D1A821900F6C780 /* Build configuration list for PBXNativeTarget "AsCutUITests" */ = {
 			isa = XCConfigurationList;
@@ -642,6 +652,7 @@
 				122F70A01D1A821900F6C780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
